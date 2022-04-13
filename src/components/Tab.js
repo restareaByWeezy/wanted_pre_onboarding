@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Tab.scss";
-
+// 탭구현
 const Tab = () => {
   const [counter, setCounter] = useState(null);
 
