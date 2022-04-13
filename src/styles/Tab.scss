@@ -1,0 +1,54 @@
+.tab-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
+  width: 450px;
+  height: 30px;
+  margin-top: 100px;
+  color: gray;
+
+  .potato {
+    width: 150px;
+    &.selected {
+      color: black;
+    }
+  }
+  .sweet-potato {
+    width: 150px;
+    &.selected {
+      color: black;
+    }
+  }
+  .curry {
+    width: 150px;
+    &.selected {
+      color: black;
+    }
+  }
+}
+
+.tab-bar {
+  width: 450px;
+  height: 2px;
+  background-color: lightgray;
+
+  .tab-slider {
+    width: 150px;
+    height: 2px;
+    background-color: #3eb489;
+
+    &.left {
+      transform: translateX(0px);
+      transition: ease-out, 0.4s;
+    }
+    &.center {
+      transform: translateX(150px);
+      transition: ease-out, 0.4s;
+    }
+    &.right {
+      transform: translateX(300px);
+      transition: ease-out, 0.4s;
+    }
+  }
+}
