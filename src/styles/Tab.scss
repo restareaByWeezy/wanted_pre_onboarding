@@ -8,27 +8,17 @@
   margin-top: 100px;
   color: gray;
 
-  .potato {
+  .tab {
     width: 150px;
-    &.selected {
-      color: black;
-    }
-  }
-  .sweet-potato {
-    width: 150px;
-    &.selected {
-      color: black;
-    }
-  }
-  .curry {
-    width: 150px;
+    cursor: pointer;
+
     &.selected {
       color: black;
     }
   }
 }
 
-.tab-bar {
+.tab-slider-wrapper {
   width: 450px;
   height: 2px;
   background-color: lightgray;
@@ -37,18 +27,6 @@
     width: 150px;
     height: 2px;
     background-color: #3eb489;
-
-    &.left {
-      transform: translateX(0px);
-      transition: ease-out, 0.4s;
-    }
-    &.center {
-      transform: translateX(150px);
-      transition: ease-out, 0.4s;
-    }
-    &.right {
-      transform: translateX(300px);
-      transition: ease-out, 0.4s;
-    }
+    transition: ease-in, 0.4s;
   }
 }

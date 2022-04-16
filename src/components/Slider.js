@@ -1,7 +1,64 @@
-import React from "react";
+import React, { useState } from "react";
+import "../styles/Slider.scss";
 
-const Slider = () => {
-  return <div></div>;
+const Slider = ({ items }) => {
+  const [percent, setPercent] = useState(1);
+  const [selected, setSelected] = useState(0);
+
+  const onChange = e => {
+    setPercent(e.target.value);
+  };
+
+  const onClick = p => {
+    setPercent(p);
+  };
+
+  const onMouseOver = p => {
+    setSelected(p);
+  };
+
+  const onMouseLeave = () => {
+    setSelected(0);
+  };
+
+  console.log(selected);
+  return (
+    <div className='slider-container'>
+      <div className='display-box'>
+        <div className='display-text'>{percent}</div>
+        <div className='percent-icon'>%</div>
+      </div>
+
+      <input
+        className='range'
+        type='range'
+        value={percent}
+        min='1'
+        onChange={onChange}
+      />
+      <div className='circle'></div>
+
+      <div className='branch-text-wrapper'>
+        {items.map(item => {
+          return (
+            <span
+              key={item}
+              onClick={() => {
+                onClick(item);
+              }}
+              onMouseOver={() => {
+                onMouseOver(item);
+              }}
+              onMouseLeave={onMouseLeave}
+              className={`branch-text ${selected === item ? "selected" : ""}`}
+            >
+              {item}%
+            </span>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Slider;

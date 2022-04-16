@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+
+  .title {
+    margin-bottom: 5px;
+  }
+
+  .email-wrapper {
+    position: relative;
+
+    .check-circle {
+      position: absolute;
+      top: 55%;
+      right: 20px;
+      transform: translate(0, -50%);
+      font-size: 20px;
+      &.confirmed {
+        color: #3eb489;
+      }
+    }
+  }
+  .invalid {
+    color: red;
+    margin-top: -10px;
+    margin-bottom: 10px;
+  }
+
+  .password-wrapper {
+    position: relative;
+
+    .visible-icon {
+      position: absolute;
+      top: 55%;
+      right: 20px;
+      transform: translate(0, -50%);
+      font-size: 20px;
+
+      &.visible {
+        color: #3eb489;
+      }
+    }
+  }
+
+  input {
+    width: 450px;
+    height: 40px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+}

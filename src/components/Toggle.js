@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../styles/Toggle.scss";
 
-const Toggle = () => {
+const Toggle = ({ items }) => {
   const [toggle, setToggle] = useState(false);
   const onClick = () => {
     setToggle(prev => !prev);
@@ -12,8 +12,11 @@ const Toggle = () => {
       <div className='toggle-wrapper' onClick={onClick}>
         <div className={`toggle-box ${toggle ? "right" : "left"}`}></div>
         <div className='toggle-text'>
-          <div className='default'>기본</div>
-          <div className='detail'>상세</div>
+          {items.map(item => (
+            <div key={item} className='text'>
+              {item}
+            </div>
+          ))}
         </div>
       </div>
     </div>
