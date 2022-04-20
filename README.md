@@ -88,6 +88,9 @@ onblur를 통해 이메일이 적합하지 않았을 때
 
 ## 5.Dropdown
 
+![ezgif-1-f2fbaa7c22](https://user-images.githubusercontent.com/64529155/164169354-3ff64860-36e4-4451-825a-b1a3255d4be6.gif)
+
+
 ### :point_right: 구현방식
 
 input값, 필터된 값, 선택한 값, 목록 표시 여부를 결정할 state를 설정해주었고
