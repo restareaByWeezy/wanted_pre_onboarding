@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import "../styles/Slider.scss";
 
-const Slider = ({ items }) => {
-  const [percent, setPercent] = useState(1);
+const items = [1, 25, 50, 75, 100];
+
+const Slider = ({ defaultPercent }) => {
+  const [percent, setPercent] = useState(
+    100 < defaultPercent || defaultPercent < 1 ? "Error" : defaultPercent
+  );
   const [selected, setSelected] = useState(0);
 
   const onChange = e => {
@@ -21,7 +25,6 @@ const Slider = ({ items }) => {
     setSelected(0);
   };
 
-  console.log(selected);
   return (
     <div className='slider-container'>
       <div className='display-box'>
@@ -34,6 +37,7 @@ const Slider = ({ items }) => {
         type='range'
         value={percent}
         min='1'
+        max='100'
         onChange={onChange}
       />
       <div className='circle'></div>

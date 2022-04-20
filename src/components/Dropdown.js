@@ -24,8 +24,11 @@ const Dropdown = ({ items }) => {
 
   useEffect(() => {
     const filteredItems = items.filter(item => {
-      return item.includes(value) || item.toLowerCase().includes(value);
+      if (item.toLowerCase().includes(value.toLowerCase())) {
+        return item;
+      }
     });
+
     setFiltered(filteredItems);
   }, [value]);
 
@@ -47,7 +50,6 @@ const Dropdown = ({ items }) => {
           <AiOutlineSearch className='search-icon' />
         </div>
         <div className='item-box'>
-          <div className='item-text'>All Symbols</div>
           {filtered.map((filterItem, index) => {
             return (
               <div key={index} className='item-text' onClick={selectedItem}>

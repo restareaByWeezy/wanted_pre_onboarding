@@ -31,7 +31,6 @@ const Input = () => {
   };
 
   useEffect(() => {
-    console.log(emailValidation(email));
     if (emailValidation(email)) {
       setIsEmail(true);
       setShowError(false);
@@ -39,16 +38,6 @@ const Input = () => {
       setIsEmail(false);
     }
   }, [email]);
-
-  //   useEffect(() => {
-  //     const email = document.querySelector(".e-mail");
-  //     email.addEventListener("focusout", event => {
-  //       if (!emailValidation(event.target.value)) {
-  //         setShowError(true);
-  //         console.log(showError);
-  //       }
-  //     });
-  //   }, []);
 
   return (
     <div className='container'>
@@ -71,8 +60,8 @@ const Input = () => {
         <AiFillCheckCircle
           className={`check-circle ${isEmail ? "confirmed" : ""}`}
         />
-        {showError && <div className='invalid'>Invalid e-mail address</div>}
       </div>
+      {showError && <div className='invalid'>Invalid e-mail address</div>}
       <div className='password-wrapper'>
         <div className='title'>Password</div>
         <input
